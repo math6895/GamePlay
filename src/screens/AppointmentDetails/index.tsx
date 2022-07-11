@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRoute } from '@react-navigation/native';
 import { Fontisto } from '@expo/vector-icons'
 import { BorderlessButton } from 'react-native-gesture-handler'
 import { ImageBackground, Text, View, FlatList } from 'react-native';
@@ -9,12 +10,31 @@ import { ListHeader } from '../../components/ListHeader';
 import { Header } from '../../components/Header';
 import { Member } from '../../components/Member';
 import { ListDivider } from '../../components/ListDivider';
+import { AppointmentProps } from '../../components/Appointment';
+import { api } from '../../services/api';
 
 import { theme } from '../../global/styles/theme';
 import BannerImg from '../../assets/banner.png'
 import { styles } from './styles';
 
+
+
+type Params = {
+    guildSelected: AppointmentProps
+}
+
 export function AppointmentDetails() {
+    const route = useRoute();
+    const { guildSelected } = route.params as Params;
+
+    async function fetchGuildInfo(){
+        try{
+            const response = await api.get(`/guilds/${guildSelected.guild.id}/widget.json`)
+        }catch (error) {
+
+        }
+    }
+
     const members = [
         {
             id: '1',
@@ -79,10 +99,10 @@ export function AppointmentDetails() {
             >
                 <View style={styles.bannerContent}>
                     <Text style={styles.title}>
-                        Lendários
+                        { guildSelected.guild.name }
                     </Text>
                     <Text style={styles.subtitle}>
-                        É hoje que vamos chegar ao challenger sem perder uma partida da md10
+                        { guildSelected.descritpion }
                     </Text>
                 </View>
             </ImageBackground>
