@@ -93,15 +93,15 @@ export function AppointmentDetails() {
             <FlatList
                 data={members}
                 keyExtractor={item => item.id}
-                renderItem={({ item}) => (
+                renderItem={({ item }) => (
                     <Member data={item} />
                 )}
-                ItemSeparatorComponent={() => <ListDivider/>}  
-                style={styles.members}  
+                ItemSeparatorComponent={() => <ListDivider isCentered />}
+                style={styles.members}
             />
             <View style={styles.footer}>
-                <ButtonIcon title="Entrar na partida"/>
-            </View>    
+                <ButtonIcon title="Entrar na partida" />
+            </View>
         </Background>
     )
 }

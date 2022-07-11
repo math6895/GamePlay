@@ -18,6 +18,8 @@
     "@react-navigation/native-stack": "^6.7.0",
     "@react-navigation/stack": "^6.2.2",
     "axios": "^0.27.2",
+    "babel-plugin-inline-dotenv": "^1.7.0",
+    "dotenv": "^16.0.1",
     "expo": "~45.0.0",
     "expo-app-loading": "~2.0.0",
     "expo-auth-session": "~3.6.1",
@@ -35,7 +37,8 @@
     "react-native-screens": "~3.11.1",
     "react-native-svg": "12.3.0",
     "react-native-svg-transformer": "^1.0.0",
-    "react-native-web": "0.17.7"
+    "react-native-web": "0.17.7",
+    "expo-updates": "~0.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
